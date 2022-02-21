@@ -35,3 +35,28 @@ Acquisition Tools:
 5. Others
     - Kroll Artifact Parser and Extractor (KAPE)
     - Rawcopy
+
+
+### KAPE stuff
+
+Use the KAPE gui
+
+`--tsource`: Source of the drive
+
+`--target`: The targets determine files and directories that will be collected by KAPE, in other words they define the evidence you want to collect.
+
+`--tdest`: Destination folder to store the information collected
+
+e.g:
+- `kape.exe --tsource C: --target RegistryHives --tdest Z:\Case1\RegFiles`
+    - Gets all registry hives from C drive, and stores them in Z:\Case1\RegFiles
+- `kape.exe --tsource C: --tdest Z:\Case2\ --tflush --target EvidenceOfExecution --vss --vhdx CASE2`
+    - `tflush` to ensure `tdest` is empty.
+    - `vss` to process Volume Shadow Copies
+    - `vhdx` to create a VHDX file named CASE2
+    - Gets all EvidenceOfExecution
+- `kape.exe --tsource C: --tdest Z:\Case3\ --tflush --target FileSystem,EventLogs --vss --vhdx CASE3`
+    - Same as above, but collecting FileSystem and EventLogs
+
+
+

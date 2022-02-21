@@ -1,5 +1,5 @@
 # eCMAP
-Personal notes on eCMAP
+Personal notes on eCMAP (halted because the labs are not working!)
 
 ## 1. Intro
 

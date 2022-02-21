@@ -59,4 +59,70 @@ e.g:
     - Same as above, but collecting FileSystem and EventLogs
 
 
+## 2. Static Analysis
 
+Two types of Static Analysis
+- Basic Analysis
+    - File Metadata
+    - Strings and other information embedded in it
+- Advanced Analysis
+    - Source code examination
+    - Disassembly
+
+### File Identification and Classification
+
+Identifying file type and obtaining a unique signature of the sample
+
+File can be identified via:
+1. File types (Extensions)
+2. File Hashes (MD5, Fuzzy Hash, ImpHash)
+3. Strings embedded in the file
+
+All files on a computer are either
+1. ASCII files (plain text, HTML, XML)
+2. Binary files (Structured files)
+    - May contain header and footer bytes
+
+![image](https://user-images.githubusercontent.com/7328587/154879915-9af7fbbe-12fc-4afc-98d4-a7ac8e28e5f7.png)
+
+Linux `file` command can identify file types
+
+![image](https://user-images.githubusercontent.com/7328587/154880013-47aec8be-d76f-4931-b479-b1dc4bc6f679.png)
+
+We cannot rely on extensions, as that can be changed without affecting the underlying structure.
+
+### Hashes
+
+![image](https://user-images.githubusercontent.com/7328587/154880154-84f38947-981c-450c-8a5c-312b3553e259.png)
+
+Other hashing functions:
+1. FuzzyHash
+2. Import Hash
+3. Section Hash
+
+We can deal with polymorphic code that changes across systems by using Fuzzy Hashing. Even if a small amount of code has been changed, the similarity will be very high
+
+Fuzzy Hashing segments a file and generates hashes on those segments. Similarity is compared using those hashed segments.
+
+Fuzzy Hashing provides File Similarity.
+
+### Strings
+
+
+## 2. Assembly stuff
+
+
+
+## 2. Dynamic Analysis
+
+
+
+## 2. Debugging/Disassembly
+
+
+
+## 2. Obfuscation techniques
+
+
+
+## 2. Static Analysis

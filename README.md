@@ -91,6 +91,8 @@ Linux `file` command can identify file types
 
 We cannot rely on extensions, as that can be changed without affecting the underlying structure.
 
+The presence of `PE` and `.text` within a file can indicate that it is an executable
+
 ### Hashes
 
 ![image](https://user-images.githubusercontent.com/7328587/154880154-84f38947-981c-450c-8a5c-312b3553e259.png)
@@ -107,6 +109,27 @@ Fuzzy Hashing segments a file and generates hashes on those segments. Similarity
 Fuzzy Hashing provides File Similarity.
 
 ### Strings
+
+Strings end with a `\0` or `00` or `NUL` or escape sequence character
+
+Strings can be in ASCII or Unicode
+- ASCII = 7bit or 128 characters
+- Extended ASCII = 8 bits or 256 characters
+- Unicode UTF-16 = 16 bits = 2 bytes
+
+Unicode:
+
+![image](https://user-images.githubusercontent.com/7328587/154900509-d780dbfc-5791-40b8-bd3a-d7d5481926c6.png)
+
+When extracting strings, we need to extract both ASCII and Unicode so we don't miss any strings
+
+ASCII strings are either printable or non-printable as output unless inspected in their hex forms
+- e.g. newline = '\n' = '\x0A'
+- non-printable characters are represented by a `.` dot
+
+
+
+
 
 
 ## 2. Assembly stuff
